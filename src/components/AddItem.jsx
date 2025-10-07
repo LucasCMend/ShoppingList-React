@@ -43,7 +43,7 @@ function AddItem(props) {
               return alert("Digite o nome e/ou o valor corretamente!");
             }
           }}
-          className="bg-purple-600 text-zinc-200 rounded-md flex items-center p-2 w-36"
+          className="bg-purple-600 text-zinc-200 rounded-md flex items-center p-2 w-36 gap-3"
         >
           <Plus size={20}></Plus>Adicionar
         </button>

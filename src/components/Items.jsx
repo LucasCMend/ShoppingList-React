@@ -20,7 +20,10 @@ function Items(props) {
                 </p>
               </li>
               <div className=" bg-zinc-200 text-right p-6">
-                <button className="flex bg-emerald-500 text-zinc-100 rounded-md p-3 gap-3 h-18">
+                <button
+                  onClick={() => props.addToCart(item.itemName, item.value)}
+                  className="flex bg-emerald-500 text-zinc-100 rounded-md p-3 gap-3 h-18"
+                >
                   <ShoppingCart size={20}></ShoppingCart> Adicionar
                 </button>
               </div>
