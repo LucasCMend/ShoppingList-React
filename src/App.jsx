@@ -24,7 +24,7 @@ function App() {
     const newItem = {
       itemName,
       id: crypto.randomUUID(),
-      value,
+      value: Number(value),
     };
 
     setItems([...items, newItem]);
@@ -44,6 +44,15 @@ function App() {
     setItems(newItemsList);
   }
 
+  function removeCartItem(itemId) {
+
+    const removedItem = scart.find((cartItem) => cartItem.id === itemId)
+
+    setScart(scart.filter((cartItem) => cartItem.id !== itemId))
+
+    setItems([...items, removedItem])
+  }
+
   return (
     <div className="h-full w-screen bg-zinc-200 flex flex-col items-center">
       <div className="text-center p-6 font-sans font-medium">
@@ -55,7 +64,7 @@ function App() {
       </div>
       <AddItem onAddItemSubmit={onAddItemSubmit}></AddItem>
       <Items items={items} addToCart={addToCart}></Items>
-      <Cart scart={scart}></Cart>
+      <Cart scart={scart} removeCartItem = {removeCartItem}></Cart>
     </div>
   );
 }
